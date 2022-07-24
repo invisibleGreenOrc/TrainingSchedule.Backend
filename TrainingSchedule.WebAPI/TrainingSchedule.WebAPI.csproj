@@ -11,7 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TrainingSchedule.Domain\TrainingSchedule.Domain.csproj" />
+    <ProjectReference Include="..\TrainingSchedule.Persistence\TrainingSchedule.Persistence.csproj" />
     <ProjectReference Include="..\TrainingSchedule.Services.Abstractions\TrainingSchedule.Services.Abstractions.csproj" />
+    <ProjectReference Include="..\TrainingSchedule.Services\TrainingSchedule.Services.csproj" />
   </ItemGroup>
 
 </Project>

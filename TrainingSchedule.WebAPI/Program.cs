@@ -1,3 +1,9 @@
+using TrainingSchedule.Domain.Repositories;
+using TrainingSchedule.Persistence.Repositories;
+using TrainingSchedule.Services;
+using TrainingSchedule.Services.Abstractions;
+using TrainingSchedule.WebAPI.Middleware;
+
 namespace TrainingSchedule.WebAPI
 {
     public class Program
@@ -13,6 +19,11 @@ namespace TrainingSchedule.WebAPI
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddScoped<IDisciplineService, DisciplineService>();
+            builder.Services.AddScoped<IDisciplineRepository, DisciplineRepository>();
+
+            builder.Services.AddTransient<ExceptionHandlingMiddleware>();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -21,6 +32,8 @@ namespace TrainingSchedule.WebAPI
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseMiddleware<ExceptionHandlingMiddleware>();
 
             app.UseHttpsRedirection();
 
