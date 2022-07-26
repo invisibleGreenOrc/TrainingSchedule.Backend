@@ -21,6 +21,8 @@ namespace TrainingSchedule.WebAPI
 
             builder.Services.AddScoped<IDisciplineService, DisciplineService>();
             builder.Services.AddScoped<IDisciplineRepository, DisciplineRepository>();
+            builder.Services.AddScoped<IRoleService, RoleService>();
+            builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 
             builder.Services.AddTransient<ExceptionHandlingMiddleware>();
 
