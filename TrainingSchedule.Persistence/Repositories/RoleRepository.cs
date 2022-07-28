@@ -14,6 +14,7 @@ namespace TrainingSchedule.Persistence.Repositories
         {
             _connectionString = configuration.GetConnectionString("LessonsDB");
         }
+
         public async Task<IEnumerable<Role>> GetAllAsync()
         {
             var sqlQuery = "SELECT * FROM Roles";

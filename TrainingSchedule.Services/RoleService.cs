@@ -1,5 +1,4 @@
 ﻿using TrainingSchedule.Contracts;
-using TrainingSchedule.Domain.Entities;
 using TrainingSchedule.Domain.Exceptions;
 using TrainingSchedule.Domain.Repositories;
 using TrainingSchedule.Services.Abstractions;
