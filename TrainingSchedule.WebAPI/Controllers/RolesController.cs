@@ -6,11 +6,11 @@ namespace TrainingSchedule.WebAPI.Controllers
 {
     [ApiController]
     [Route("api/roles")]
-    public class RoleController : ControllerBase
+    public class RolesController : ControllerBase
     {
         private readonly IRoleService _roleService;
 
-        public RoleController(IRoleService roleService)
+        public RolesController(IRoleService roleService)
         {
             _roleService = roleService;
         }

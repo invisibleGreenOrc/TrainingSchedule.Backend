@@ -6,11 +6,11 @@ namespace TrainingSchedule.WebAPI.Controllers
 {
     [ApiController]
     [Route("api/disciplines")]
-    public class DisciplineController : ControllerBase
+    public class DisciplinesController : ControllerBase
     {
         private readonly IDisciplineService _disciplineService;
 
-        public DisciplineController(IDisciplineService disciplineService)
+        public DisciplinesController(IDisciplineService disciplineService)
         {
             _disciplineService = disciplineService;
         }
