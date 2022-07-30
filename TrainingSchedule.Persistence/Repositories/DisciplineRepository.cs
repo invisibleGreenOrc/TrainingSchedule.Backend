@@ -27,7 +27,7 @@ namespace TrainingSchedule.Persistence.Repositories
 
         public async Task<Discipline> GetByIdAsync(int disciplineId)
         {
-            var sqlQuery = $"SELECT * FROM Disciplines WHERE Id = {disciplineId}";
+            var sqlQuery = $"SELECT * FROM Disciplines WHERE id = {disciplineId}";
 
             using (var connection = new NpgsqlConnection(_connectionString))
             {

@@ -35,7 +35,8 @@ namespace TrainingSchedule.Persistence.Repositories
                                   $"telegram_user_id AS TelegramUserId, " +
                                   $"name, " +
                                   $"role_id AS RoleId " +
-                           $"FROM Users WHERE Id = {userId}";
+                           $"FROM Users" +
+                           $"WHERE id = {userId}";
 
             using (var connection = new NpgsqlConnection(_connectionString))
             {
@@ -59,13 +60,13 @@ namespace TrainingSchedule.Persistence.Repositories
 
         public async Task<User> InsertAsync(User user)
         {
-            var sqlQuery = $"INSERT INTO Users " +
-                                      $"(telegram_user_id, name, role_id) " +
-                           $"VALUES (@TelegramUserId, @Name, @RoleId)" +
-                           $"RETURNING id, " +
-                                     $"telegram_user_id AS TelegramUserId, " +
-                                     $"name, " +
-                                     $"role_id AS RoleId";
+            var sqlQuery = "INSERT INTO Users " +
+                                      "(telegram_user_id, name, role_id) " +
+                           "VALUES (@TelegramUserId, @Name, @RoleId)" +
+                           "RETURNING id, " +
+                                     "telegram_user_id AS TelegramUserId, " +
+                                     "name, " +
+                                     "role_id AS RoleId";
 
             using (var connection = new NpgsqlConnection(_connectionString))
             {
