@@ -28,6 +28,9 @@ namespace TrainingSchedule.WebAPI
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IUserRepository, UserRepository>();
 
+            builder.Services.AddScoped<ILessonService, LessonService>();
+            builder.Services.AddScoped<ILessonRepository, LessonRepository>();
+
             builder.Services.AddTransient<ExceptionHandlingMiddleware>();
 
             var app = builder.Build();

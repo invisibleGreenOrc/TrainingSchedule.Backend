@@ -1,19 +1,17 @@
-﻿namespace TrainingSchedule.Domain.Entities
+﻿namespace TrainingSchedule.Contracts
 {
-    public class Lesson
+    public class LessonDto
     {
         public int Id { get; set; }
 
         public int DisciplineId { get; set; }
 
-        public Difficulty Difficulty { get; set; }
+        public int Difficulty { get; set; }
 
         public DateTime Date { get; set; }
 
         public int TrainerId { get; set; }
 
         public List<int> TraineesIds { get; set; }
-
-        public DateTime Created { get; set; }
     }
 }
