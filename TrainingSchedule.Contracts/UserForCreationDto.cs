@@ -2,7 +2,7 @@
 {
     public class UserForCreationDto
     {
-        public long TelegramUserId { get; set; }
+        public long BotUserId { get; set; }
 
         public string Name { get; set; }
 

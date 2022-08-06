@@ -22,7 +22,7 @@ namespace TrainingSchedule.Services
             var usersDto = users.Select(user => new UserDto
             {
                 Id = user.Id,
-                TelegramUserId = user.TelegramUserId,
+                BotUserId = user.TelegramUserId,
                 Name = user.Name,
                 RoleId = user.RoleId
             });
@@ -42,7 +42,7 @@ namespace TrainingSchedule.Services
             var userDto = new UserDto
             {
                 Id = user.Id,
-                TelegramUserId = user.TelegramUserId,
+                BotUserId = user.TelegramUserId,
                 Name = user.Name,
                 RoleId = user.RoleId
             };
@@ -57,7 +57,7 @@ namespace TrainingSchedule.Services
             var userDto = users.Select(user => new UserDto
             {
                 Id = user.Id,
-                TelegramUserId = user.TelegramUserId,
+                BotUserId = user.TelegramUserId,
                 Name = user.Name,
                 RoleId = user.RoleId
             });
@@ -69,7 +69,7 @@ namespace TrainingSchedule.Services
         {
             var user = new User
             {
-                TelegramUserId = userForCreationDto.TelegramUserId,
+                TelegramUserId = userForCreationDto.BotUserId,
                 Name = userForCreationDto.Name,
                 RoleId = userForCreationDto.RoleId
             };
@@ -79,7 +79,7 @@ namespace TrainingSchedule.Services
             var userDto = new UserDto
             {
                 Id = createdUser.Id,
-                TelegramUserId = createdUser.TelegramUserId,
+                BotUserId = createdUser.TelegramUserId,
                 Name = createdUser.Name,
                 RoleId = createdUser.RoleId
             };

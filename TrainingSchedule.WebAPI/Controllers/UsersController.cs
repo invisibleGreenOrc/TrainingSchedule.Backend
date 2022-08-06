@@ -16,11 +16,11 @@ namespace TrainingSchedule.WebAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<UserDto>>> GetUsers(long? telegramUserId)
+        public async Task<ActionResult<IEnumerable<UserDto>>> GetUsers(long? botUserId)
         {
             IEnumerable<UserDto> users;
 
-            if (telegramUserId is null)
+            if (botUserId is null)
             {
                 users = await _userService.GetAllAsync();
 
@@ -28,7 +28,7 @@ namespace TrainingSchedule.WebAPI.Controllers
             }
             else
             {
-                users = await _userService.GetByTelegramIdAsync(telegramUserId.Value);
+                users = await _userService.GetByTelegramIdAsync(botUserId.Value);
 
                 return Ok(users);
             }
