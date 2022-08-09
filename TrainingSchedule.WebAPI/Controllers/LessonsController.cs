@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TrainingSchedule.Contracts;
-using TrainingSchedule.Services;
 using TrainingSchedule.Services.Abstractions;
 
 namespace TrainingSchedule.WebAPI.Controllers
@@ -13,7 +12,7 @@ namespace TrainingSchedule.WebAPI.Controllers
 
         public LessonsController(ILessonService lessonService)
         {
-            _lessonService = lessonService; 
+            _lessonService = lessonService;
         }
 
         [HttpGet]
