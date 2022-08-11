@@ -35,7 +35,7 @@ namespace TrainingSchedule.Persistence.Repositories
                                   $"telegram_user_id AS TelegramUserId, " +
                                   $"name, " +
                                   $"role_id AS RoleId " +
-                           $"FROM Users" +
+                           $"FROM Users " +
                            $"WHERE id = {userId}";
 
             using (var connection = new NpgsqlConnection(_connectionString))
