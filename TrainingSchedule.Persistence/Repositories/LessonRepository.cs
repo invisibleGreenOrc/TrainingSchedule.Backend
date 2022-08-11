@@ -21,20 +21,20 @@ namespace TrainingSchedule.Persistence.Repositories
         {
             var sqlQuery = new Query("lessons").Select("lessons.id", "lessons.discipline_id AS DisciplineId", "lessons.difficulty", "lessons.date", "lessons.trainer_id AS TrainerId");
 
-            if (dateFrom is not null)
+            if (dateFrom.HasValue)
             {
-                sqlQuery.Where("date", ">=", dateFrom);
+                sqlQuery.Where("date", ">=", dateFrom.Value);
             }
 
-            if (trainerId is not null)
+            if (trainerId.HasValue)
             {
-                sqlQuery.Where("trainer_id", trainerId);
+                sqlQuery.Where("trainer_id", trainerId.Value);
             }
 
-            if (traineeId is not null)
+            if (traineeId.HasValue)
             {
                 sqlQuery.Join("lesson_trainees", "lesson_trainees.lesson_id", "lessons.id");
-                sqlQuery.Where("trainee_id", traineeId);
+                sqlQuery.Where("trainee_id", traineeId.Value);
             }
 
             var compiler = new PostgresCompiler();
