@@ -34,9 +34,9 @@ namespace TrainingSchedule.WebAPI.Controllers
         }
 
         [HttpPost("{lessonId:int}/trainees")]
-        public async Task<IActionResult> AddLessonParticipant(int lessonId, [FromBody] int traineeId)
+        public async Task<IActionResult> AddLessonParticipant(int lessonId, [FromBody] ParticipantForCreatingDto participant)
         {
-            await _lessonService.AddLessonParticipant(lessonId, traineeId);
+            await _lessonService.AddLessonParticipant(lessonId, participant.traineeId);
 
             return Ok();
         }
